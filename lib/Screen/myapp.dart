@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     void printTxt() {
       double x = 10;
       double y = double.parse(txt.text);
-      print('text:${y}');
+      print('text:${y + x}');
     }
 
     return MaterialApp(
@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
           TextField(
             decoration: InputDecoration(labelText: 'Input'),
             controller: txt,
+            keyboardType: TextInputType.number,
           ),
           TextButton(
             onPressed: printTxt,

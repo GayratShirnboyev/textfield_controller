@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           TextField(
             decoration: InputDecoration(labelText: 'Input'),
             controller: txt,
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.numberWithOptions(decimal: true),
           ),
           TextButton(
             onPressed: printTxt,

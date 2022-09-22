@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    TextEditingController txt = TextEditingController();
+  State<MyApp> createState() => _MyAppState();
+}
 
-    void printTxt() {
+class _MyAppState extends State<MyApp> {
+  TextEditingController txt = TextEditingController();
+  String result = 'Natija';
+
+  @override
+  Widget build(BuildContext context) {
+    printTxt() {
       double x = 10;
       double y = double.parse(txt.text);
       print('text:${y + x}');
+
+      setState(() {
+        result = 'change';
+      });
     }
 
     return MaterialApp(
@@ -22,6 +32,7 @@ class MyApp extends StatelessWidget {
             controller: txt,
             keyboardType: TextInputType.numberWithOptions(decimal: true),
           ),
+          Text(result),
           TextButton(
             onPressed: printTxt,
             child: Text('CLICK ME'),

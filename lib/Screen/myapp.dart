@@ -5,11 +5,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController txt = TextEditingController();
     return MaterialApp(
       home: Scaffold(
           body: Container(
         child: TextField(
           decoration: InputDecoration(labelText: 'Input'),
+          controller: txt,
         ),
       )),
     );

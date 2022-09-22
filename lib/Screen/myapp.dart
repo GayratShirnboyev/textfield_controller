@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  void printTxt() {
-    print('Button is pressed');
-  }
 
   @override
   Widget build(BuildContext context) {
     TextEditingController txt = TextEditingController(text: 'Controller');
+
+    void printTxt() {
+      print('text:${txt.text}');
+    }
+
     return MaterialApp(
       home: Scaffold(
           body: Column(

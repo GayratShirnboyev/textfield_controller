@@ -5,10 +5,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController txt = TextEditingController(text: 'Controller');
+    TextEditingController txt = TextEditingController();
 
     void printTxt() {
-      print('text:${txt.text}');
+      double x = 10;
+      double y = double.parse(txt.text);
+      print('text:${y}');
     }
 
     return MaterialApp(

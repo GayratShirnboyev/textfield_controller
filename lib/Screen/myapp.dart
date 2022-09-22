@@ -5,7 +5,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController txt = TextEditingController();
+    TextEditingController txt = TextEditingController(text: 'Controller');
     return MaterialApp(
       home: Scaffold(
           body: Container(

@@ -8,18 +8,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController txt = TextEditingController();
-  String result = 'Natija';
+  TextEditingController txt = TextEditingController(text: '0');
+  double result = 0;
 
   @override
   Widget build(BuildContext context) {
     printTxt() {
       double x = 10;
       double y = double.parse(txt.text);
-      print('text:${y + x}');
 
+      print('text:${y + x}');
       setState(() {
-        result = 'change';
+        result = x + y;
       });
     }
 
@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
             controller: txt,
             keyboardType: TextInputType.numberWithOptions(decimal: true),
           ),
-          Text(result),
+          Text(result.toString()),
           TextButton(
             onPressed: printTxt,
             child: Text('CLICK ME'),
